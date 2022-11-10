@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug-MinGW" CONFIG_NAME="Debug" TOOLCHAIN_NAME="MinGW" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d6931541-82cb-479d-9439-6f95047ccf96" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DNA_research.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edge_compute.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/bfc71bfc-974f-49e4-a72a-0e733ca75a1b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/communicate_model_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/congestion_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/hierarchy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/image-20220923082000059.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/image-20220923084837154.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/image-20220923090440527.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/image-20220923091343669.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/image-20220923092021973.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/image-20220923092045612.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/image-20220923092053172.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/immune.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/local_overhead_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/local_overhead_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/offload_overhead.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/request_and_server_model.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/immune.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="3xluu7s9" />
+  </component>
+  <component name="ProjectId" id="2HLR65eCRh8cJFHl9zEUdcLpNEr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/imgs" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.cidr.embedded.config" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Paper-Reading\imgs" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Paper-Reading\imgs" />
+      <recent name="D:\Paper-Reading" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d6931541-82cb-479d-9439-6f95047ccf96" name="Default Changelist" comment="" />
+      <created>1668062198597</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668062198597</updated>
+      <workItem from="1668062200584" duration="7780000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
