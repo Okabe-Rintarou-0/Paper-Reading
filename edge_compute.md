@@ -2,6 +2,8 @@
 
 ## 笔记
 
+链接：[An advanced decision model enabling two-way initiative offloading in edge computing](https://www.sciencedirect.com/science/article/pii/S0167739X17329527?via%3Dihub)
+
 ### 层级
    
 ![](imgs/hierarchy.png)
@@ -66,10 +68,11 @@
     当缓冲区为空时，它将接受所有传入的数据报。随着队列的增长，它将根据增长的概率丢弃传入的数据报。
     当队列最终满时，丢弃的概率将达到1，所有传入的数据报都将被丢弃。
     
-    > 当平均队列长度达到 red-min-threshold 时，RED 随机选择该丢弃哪个包。当平均队列长度变长时，堆砌多少包数的可能性会增加。如果平均队列长度达到 red-max-threshold，则丢弃该包。
-    尽管如此，也存在真实队列长度（非平均的）远大于 red-max-threshold 时，丢弃所有超过 red-limit 的数据报的情况。
-    
     ![](imgs/RED.png)
+    
+    ![](imgs/RED2.png)
+    
+    ![](imgs/RED3.png)
         
     > 在卸载上下文中，“丢弃请求”表示将其卸载到下一跳服务器，而“处理请求”表示对其做出决定。
     当当前服务器已经过载时删除请求可以帮助请求直接跳转队列。这也使得作为接收者的服务器能够根据其能力选择性地接受请求。
@@ -80,6 +83,56 @@
     
     论文对 RED 进行了一系列修改：
     
-    + 首先，将“队列大小”的计算更改为计算完成处理所有排队请求的预期时间。
+    + 将“队列大小”的计算更改为计算完成处理所有排队请求的预期时间。
         
       > the evaluation of "the queue size" is altered into calculating the expected time to finish processing all enqueued requests.
+ 
+    + 修改 RED 算法中的 $$min_{th}$$ 和 $$max_{th}$$
+        
+        ![](imgs/threshold.png)
+        
+        > Here $t_{\text {exe,avg }}$ is the average execution time of these enqueued requests. For the lower bound, when enqueued requests require
+                                      relatively large amount of computation, the threshold represents
+                                      the absolute execution time; when enqueued requests require
+                                      relatively small amount of computation, the threshold represents
+                                      the expected execution time for $min_{\text {original }}$ requests. For the upper
+                                      bound, we choose to extend the range for calculating the growing
+                                      probability as wide as possible, so that the current server will not
+                                      totally "deny" requests too early and the resource can be fully
+                                      utilized.
+    
+    + 修改一些其他的重要参数
+        
+        > some other key parameters should also be modified,
+          such as $$w_q$$ and $$max_p$$. provided some suggestions on setting
+          these parameters
+    
+    
+**增强的决策模型关注下一跳的服务器的状态，而 `RED` 算法则是关注当前服务器的状态，两者相辅相成。** 论文也基于两者设计出了如下的系统：
+    
+![](imgs/advanced_decision_model.png)
+
++ 基于 `RED` 算法和上述修改实现了一个 `RED Filter`。它作为每个服务器的核心。`RED Filter` 将从当前服务器维护的任务队列中收集队列信息（info），并使用加权移动平均模型来评估卸载的可能性。
+要“丢弃”的请求将在排队之前卸载。
+
++ 每个排队的请求在成为任务队列的头部时都将被处理。另一个名为 `Overhead Filter` 的过滤器将在那里决定请求是在本地处理还是卸载到下一跳服务器。`Overhead Filter` 
+将从下一跳服务器维护的任务队列中收集队列信息，并采用 `advanced decision model`。
+
++ 如果请求计划在本地处理，它将转发给 `Local Executor`。执行器将执行计算，然后将结果发回。
+
++ 如果请求被卸载，它将被传输到下一跳服务器（next-hop server）的入口。该请求将由那里的 `RED Filter`与其他请求一起进一步判断，包括也卸载到该服务器的请求以及该服务器自身生成的请求。
+
+### 评估和仿真
+
+简单的层级拓扑（下面的数字代表 index : available computation）：
+
+![](imgs/simple_hierarchy_topo.png)
+
++ 一个任务生成器负责定期将请求推送到第1层的服务器。每个周期的请求数（表示工作负载率）是根据泊松分布确定的。
+
++ 每个请求所需的计算（表示请求大小）将按照正态分布进一步确定。
+
++ 在不失一般性的情况下，选择请求的平均完成时间作为性能指标，（平均完成时间越短，表明整个系统提供的计算能力越大。）
+
++ 记录了每台服务器为辅助分析处理的请求数。
+
