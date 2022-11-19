@@ -10,3 +10,7 @@
 ### DNA 相关
 
 + [DNA 相关调研](DNA_research.md)
+
+### 容器 & 虚拟化
+
++ [RunD](https://zhuanlan.zhihu.com/p/566313443)
