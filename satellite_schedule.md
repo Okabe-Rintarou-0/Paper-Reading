@@ -36,7 +36,7 @@
 
 ### 建模
 
-|模型   |含义   | 
+|参数   |含义   | 
 |---|---|
 | $$n$$  | 卫星数量  | 
 | $$p$$ | 处理器（卫星）数量 |
@@ -47,11 +47,33 @@
 |$$\text { pred }\left(v_i\right)$$|前置任务|
 | $$\operatorname{succ}\left(v_i\right)$$| 后置任务 |
 |$$P \operatorname{cost}\left(v_i, p_j\right)$$| 第 i 号任务在第 j 号卫星上执行的时间|
-|![](imgs/c(i,j).jpg)| hop 和 B(t) 两项分别表示在 t 时刻 k 号卫星和 l 号卫星之间的路由跳数，以及分配给任务传输的网络带宽   |
-|![](imgs/available.jpg)| 第 k 号卫星的最早可用时间，`AFT` 代表子任务的实际完成时间|
-|![](imgs/est.jpg)| 第 i 号子任务在第 k 号卫星上的最早开始执行时间|
-|![](imgs/eft.jpg)|  第 i 号子任务在第 k 号卫星上的最早完成时间|
-|![](imgs/rank.jpg)| 类似 `HEFT` 中的任务优先级计算公式 |
+
+<table>
+    <tr>
+        <td>模型</td>
+        <td>含义</td>
+    </tr> 
+    <tr>
+        <td><img src="imgs/c(i,j).jpg"></td>
+        <td>hop 和 B(t) 两项分别表示在 t 时刻 k 号卫星和 l 号卫星之间的路由跳数，以及分配给任务传输的网络带宽</td>
+    </tr> 
+    <tr>
+        <td><img src="imgs/available.jpg"></td>
+        <td>第 k 号卫星的最早可用时间，`AFT` 代表子任务的实际完成时间</td>
+    </tr>
+    <tr>
+        <td><img src="imgs/est.jpg"></td>
+        <td>第 i 号子任务在第 k 号卫星上的最早开始执行时间</td>
+    </tr>
+    <tr>
+        <td><img src="imgs/eft.jpg"></td>
+        <td>第 i 号子任务在第 k 号卫星上的最早完成时间</td>
+    </tr>
+    <tr>
+        <td><img src="imgs/rank.jpg"></td>
+        <td>类似 HEFT 中的任务优先级计算公式</td>
+    </tr>
+</table>
 
 ### 算法
 
