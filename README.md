@@ -5,6 +5,8 @@
 
 + [An advanced decision model enabling two-way initiative offloading in edge computing](./edge_compute.md)
 
++ [Task Scheduling of High Dynamic Edge Cluster in Satellite Edge Computing](./satellite_schedule.md)
+
 ### DNA 相关
 
 + [DNA 相关调研](DNA_research.md)

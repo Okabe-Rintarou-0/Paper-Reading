@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated />
   </component>
@@ -10,13 +13,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6931541-82cb-479d-9439-6f95047ccf96" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/imgs/RED2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/RED3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/advanced_decision_model.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/simple_hierarchy_topo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/threshold.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/SDPLS.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/available.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/c(i,j).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/eft.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/est.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/rank.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/satellite-architecture.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/satellite_schedule.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edge_compute.md" beforeDir="false" afterPath="$PROJECT_DIR$/edge_compute.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DNA_research.md" beforeDir="false" afterPath="$PROJECT_DIR$/DNA_research.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/bfc71bfc-974f-49e4-a72a-0e733ca75a1b.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/nanopore.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/image-20220923082000059.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/get_put.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/image-20220923084837154.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/encoding.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/image-20220923090440527.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/DNA-encoding.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/image-20220923091343669.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/DNA_fig7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/image-20220923092021973.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/DNA-fig8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/image-20220923092045612.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/DNA-fig11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/image-20220923092053172.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/DNA-fig12.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,16 +59,24 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/imgs" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/DNA_research.md" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Paper-Reading\imgs" />
-      <recent name="D:\Paper-Reading" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Paper-Reading\imgs" />
       <recent name="D:\Paper-Reading\RED.png" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Paper-Reading\imgs" />
+      <recent name="D:\Paper-Reading" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -66,6 +88,10 @@
       <updated>1668062198597</updated>
       <workItem from="1668062200584" duration="8224000" />
       <workItem from="1668143671206" duration="2485000" />
+      <workItem from="1668212897074" duration="672000" />
+      <workItem from="1668480924523" duration="25000" />
+      <workItem from="1668754871188" duration="1191000" />
+      <workItem from="1668856429733" duration="3078000" />
     </task>
     <servers />
   </component>
@@ -73,13 +99,29 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="967" y="500" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1668857096207">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="967" y="500" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1668857096206" />
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1668857421363">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1668857421363" />
+    <state x="1060" y="454" width="440" height="491" key="FileChooserDialogImpl" timestamp="1668857158832">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1060" y="454" width="440" height="491" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1668857158832" />
     <state x="781" y="344" key="SettingsEditor" timestamp="1668144082823">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1668144082823" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1668145228315">
+    <state x="1083" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1668858102361">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1668145228315" />
+    <state x="1083" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1668858102361" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1668857753057">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1668857753057" />
   </component>
 </project>
