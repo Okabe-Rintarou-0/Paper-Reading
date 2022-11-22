@@ -54,23 +54,23 @@
         <td>含义</td>
     </tr> 
     <tr>
-        <td><img src="imgs/c(i,j).jpg"></td>
+        <td><img src="imgs/c(i,j).jpg" alt=""></td>
         <td>hop 和 B(t) 两项分别表示在 t 时刻 k 号卫星和 l 号卫星之间的路由跳数，以及分配给任务传输的网络带宽</td>
     </tr> 
     <tr>
-        <td><img src="imgs/available.jpg"></td>
+        <td><img src="imgs/available.jpg" alt=""></td>
         <td>第 k 号卫星的最早可用时间，`AFT` 代表子任务的实际完成时间</td>
     </tr>
     <tr>
-        <td><img src="imgs/est.jpg"></td>
+        <td><img src="imgs/est.jpg" alt=""></td>
         <td>第 i 号子任务在第 k 号卫星上的最早开始执行时间</td>
     </tr>
     <tr>
-        <td><img src="imgs/eft.jpg"></td>
+        <td><img src="imgs/eft.jpg" alt=""></td>
         <td>第 i 号子任务在第 k 号卫星上的最早完成时间</td>
     </tr>
     <tr>
-        <td><img src="imgs/rank.jpg"></td>
+        <td><img src="imgs/rank.jpg" alt=""></td>
         <td>类似 HEFT 中的任务优先级计算公式</td>
     </tr>
 </table>
@@ -80,3 +80,17 @@
 论文提出的 `SDPLS` 算法：
 
 ![](imgs/SDPLS.jpg)
+
+该算法基于动态优先级队列，能够适应任务执行环境中的动态网络，属于列表调度算法中的动态任务调度算法。`SDPLS` 的关键思想是根据实时网络状态动态调整任务的优先级排序，
+从而在网络条件的影响下获得优先级最高的任务，并选择合适的处理器或卫星节点进行处理。具体地说，在 `SDPLS` 算法中，未调度的子任务集在循环中被处理，并且对于每个处理，
+首先获得具有最高优先级的未调度子任务，然后为子任务选择合适的处理器。该方法能最大程度地适应网络环境的波动，在不确定条件下获得最优调度结果。
+
+并且，对于 `entry task`，它将被直接复制到所有处理器执行。
+
+## 仿真
+
+基于 STK 进行仿真。
+
+## 不足
+
+调度结果和网络描述模型的准确度密切相关。
