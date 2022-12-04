@@ -87,7 +87,7 @@
         
       > the evaluation of "the queue size" is altered into calculating the expected time to finish processing all enqueued requests.
  
-    + 修改 RED 算法中的 $$min_{th}$$ 和 $$max_{th}$$
+    + 修改 RED 算法中的 $min_{th}$ 和 $max_{th}$
         
         ![](imgs/threshold.png)
         
@@ -104,7 +104,7 @@
     + 修改一些其他的重要参数
         
         > some other key parameters should also be modified,
-          such as $$w_q$$ and $$max_p$$. provided some suggestions on setting
+          such as $w_q$ and $max_p$. provided some suggestions on setting
           these parameters
     
     
