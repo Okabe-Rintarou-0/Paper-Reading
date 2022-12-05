@@ -6,7 +6,7 @@
 
 ### 层级
    
-![](imgs/hierarchy.png)
+![](imgs/red/hierarchy.png)
 
 随着物联网的发展，很多设备从数据产生者变为了数据消费者，对于很多时延敏感的请求，可以考虑在本地执行（如果具有充足计算能力），也可以
 将任务卸载到尽可能近的节点（通过若干跳）。
@@ -24,23 +24,23 @@
 
 + 请求和服务器模型
 
-    ![](imgs/request_and_server_model.png)
+    ![](imgs/red/request_and_server_model.png)
 
 + 计算损耗模型
     
-    ![](imgs/communicate_model_1.png)
+    ![](imgs/red/communicate_model_1.png)
 
 + 本地开销模型
 
-    ![](imgs/local_overhead_1.png)
+    ![](imgs/red/local_overhead_1.png)
     
-    ![](imgs/local_overhead_2.png)
+    ![](imgs/red/local_overhead_2.png)
 
 + 卸载开销模型
 
     包含任务卸载消耗 + 任务执行消耗。
     
-    ![](imgs/offload_overhead.png)
+    ![](imgs/red/offload_overhead.png)
  
 + 忽略了传回结果的时间消耗，因为对比于输入的数据规模，结果的数据规模通常可以忽略不记。
     
@@ -57,7 +57,7 @@
 
 + 原始决策模型不会产生任何拥塞，但是实际上我们必须考虑拥塞的情况。通过如下修改，将卸载任务的目标节点的任务等待队列纳入考量，避免将任务卸载到已经过载的节点。
 
-    ![](imgs/congestion_1.png)
+    ![](imgs/red/congestion_1.png)
 
     但是如上的改进仍然不够，这是因为设备获取的状态信息可能是过时的，并且拥塞可能在做出决定后立即发生。
 
@@ -68,11 +68,11 @@
     当缓冲区为空时，它将接受所有传入的数据报。随着队列的增长，它将根据增长的概率丢弃传入的数据报。
     当队列最终满时，丢弃的概率将达到1，所有传入的数据报都将被丢弃。
     
-    ![](imgs/RED.png)
+    ![](imgs/red/RED.png)
     
-    ![](imgs/RED2.png)
+    ![](imgs/red/RED2.png)
     
-    ![](imgs/RED3.png)
+    ![](imgs/red/RED3.png)
         
     > 在卸载上下文中，“丢弃请求”表示将其卸载到下一跳服务器，而“处理请求”表示对其做出决定。
     当当前服务器已经过载时删除请求可以帮助请求直接跳转队列。这也使得作为接收者的服务器能够根据其能力选择性地接受请求。
@@ -89,7 +89,7 @@
  
     + 修改 RED 算法中的 $$min_{th}$$ 和 $$max_{th}$$
         
-        ![](imgs/threshold.png)
+        ![](imgs/red/threshold.png)
         
         > Here $t_{\text {exe,avg }}$ is the average execution time of these enqueued requests. For the lower bound, when enqueued requests require
                                       relatively large amount of computation, the threshold represents
@@ -110,7 +110,7 @@
     
 **增强的决策模型关注下一跳的服务器的状态，而 `RED` 算法则是关注当前服务器的状态，两者相辅相成。** 论文也基于两者设计出了如下的系统：
     
-![](imgs/advanced_decision_model.png)
+![](imgs/red/advanced_decision_model.png)
 
 + 基于 `RED` 算法和上述修改实现了一个 `RED Filter`。它作为每个服务器的核心。`RED Filter` 将从当前服务器维护的任务队列中收集队列信息（info），并使用加权移动平均模型来评估卸载的可能性。
 要“丢弃”的请求将在排队之前卸载。
@@ -126,7 +126,7 @@
 
 简单的层级拓扑（下面的数字代表 index : available computation）：
 
-![](imgs/simple_hierarchy_topo.png)
+![](imgs/red/simple_hierarchy_topo.png)
 
 + 一个任务生成器负责定期将请求推送到第1层的服务器。每个周期的请求数（表示工作负载率）是根据泊松分布确定的。
 

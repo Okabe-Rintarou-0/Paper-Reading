@@ -26,7 +26,7 @@
 
 该系统使用的是 `MinION MK1B` DNA 测序仪（如下图所示）。当请求读取操作时，存储的 DNA 池的容量将会通过废液端口排出多余的 DNA，减少到大约 2 μL - 4μL。此后，注射泵将会将单步制备/测序混合物（single-step preparing/sequencing mix）分配到存储容器中；并通过正压力将得到的混合物推入到 `MinION` 的注油口（priming port）。 
 
-![](imgs/nanopore.png)
+![](imgs/dna/nanopore.png)
 
 ### 编码/解码模块
 
@@ -119,7 +119,7 @@ Codex DNA研发团队继续在BioXp系统工作流中增强其DNA数据存储能
 
   读取过程会从池中删除一个DNA样本，因此累积读取会减少可用于未来操作的DNA数量。但DNA很容易复制，所以如果需要的话，在读取操作后可以很容易地补充池。如果连续放大有问题，则在读取操作后也可以完全重新合成池
 
-![](imgs/get_put.png)
+![](imgs/dna/get_put.png)
 
 ### DNA 编解码
 
@@ -129,13 +129,13 @@ Codex DNA研发团队继续在BioXp系统工作流中增强其DNA数据存储能
 
 + 使用 Huffman base3 code。A，C，G，T，按理说应该以 4 为基数表示，但是这样会容易产生连续的相同的碱基，提升错误发生的几率。所以文中提及的方法是使用 base3 循环编码，请看下图：
 
-  ![](imgs/encoding.png)
+  ![](imgs/dna/encoding.png)
 
 ​	将 Base 3 Huffman编码转换成碱基的时候，还会考量上一个碱基是什么，从而避免连续的相同的碱基。
 
 + 最终，将 DNA 序列编码成如下所示的 DNA 链（由于随着 DNA 合成链长度增加，出错的概率指数增长，故而一般一条 DNA 序列会被拆分成多个 DNA 链）：
 
-  ![](imgs/DNA-encoding.png)
+  ![](imgs/dna/DNA-encoding.png)
 
   > 在DNA中表示数据的另一个实际问题是，当前的合成技术无法扩展到数百个核苷酸的序列之外。因此，超过百位数的数据不能合成为单链DNA。此外，DNA池不提供空间隔离，因此池包含许多不同键的数据，这些键与单个读取操作无关。仅分离感兴趣的分子并非易事，因此现有的DNA存储技术通常会对整个解决方案进行排序，这会带来巨大的成本和时间开销。为了克服这两个挑战，我们以与Goldman等人[10]相似的方式组织DNA中的数据，如图6所示。将核苷酸表示分割成块，我们将其合成为单独的链，允许存储大量值。用识别素标记这些链允许读取过程分离感兴趣的分子，从而执行随机访问。	
 
@@ -153,7 +153,7 @@ Codex DNA研发团队继续在BioXp系统工作流中增强其DNA数据存储能
 
 > 每条链的有效载荷是输入流的重叠段，因此流中的每个块都以四条不同的链出现
 
-![](imgs/DNA_fig7.png)
+![](imgs/dna/DNA_fig7.png)
 
 #### XOR
 
@@ -161,10 +161,10 @@ Codex DNA研发团队继续在BioXp系统工作流中增强其DNA数据存储能
 
 > instead of including only two blocks in an exclusive-or, we can include n, such that any n−1 of the n blocks is sufficient to recover the last, at an average density overhead of 1/n
 
-![](imgs/DNA-fig8.png)
+![](imgs/dna/DNA-fig8.png)
 
 ### 测试结果
 
-![](imgs/DNA-fig11.png)
+![](imgs/dna/DNA-fig11.png)
 
-![](imgs/DNA-fig12.png)
+![](imgs/dna/DNA-fig12.png)
