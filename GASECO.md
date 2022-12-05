@@ -1,6 +1,6 @@
 # Computation Offloading Strategy of Multi-satellite Cooperative Tasks Based on Genetic Algorithm in Satellite Edge Computing
 
-链接：[Computation Offloading Strategy of Multi-satellite Cooperative Tasks Based on Genetic Algorithm in Satellite Edge Computing](https://ieeexplore.ieee.org/abstract/document/8689224)
+链接：[Computation Offloading Strategy of Multi-satellite Cooperative Tasks Based on Genetic Algorithm in Satellite Edge Computing](https://ieeexplore.ieee.org/abstract/document/9784700)
 
 ![](imgs/GASECO/img1.png)
 
