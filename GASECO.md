@@ -40,15 +40,15 @@
 
 |等式|含义|
 |---|---|
-| $T_m^{t x_{-} u p}=\frac{I_m}{R_{g t s}}$  | 数据卸载阶段的传输延迟 |
-| $T_{m n}^{t x_{-} d i s}(t)=\frac{h o p_{0 n}(t) \times I_m}{r_{e_{0 n}}(t)}$ | 数据分发阶段的传输延迟  |
+| $T_m^{t x\_ u p}=\frac{I_m}{R_{g t s}}$  | 数据卸载阶段的传输延迟 |
+| $T_{m n}^{t x\_ d i s}(t)=\frac{h o p_{0 n}(t) \times I_m}{r_{e_{0 n}}(t)}$ | 数据分发阶段的传输延迟  |
 | $T_{m n}^{t x_n r e}(t)=\frac{h o p_{0 n}(t) \times I_m \times \sigma_m}{r_{e_{0 n}}(t)}$ |结果总结阶段的传输延迟|
-| $T_m^{t x_{-} d o w n}=\frac{I_m \times \sigma_m}{R_{s t g}}$ | 结果返回阶段的传输延迟 |
-| $T_{m n}^{t x}=T_m^{t x_{-} u p}+T_{m n}^{t x_n d i s}(t)+T_{m n}^{t x_n r e}(t)+T_m^{t x_{-} d o w n}$ | 总传输延迟 |
+| $T_m^{t x\_d o w n}=\frac{I_m \times \sigma_m}{R_{s t g}}$ | 结果返回阶段的传输延迟 |
+| $T_{m n}^{t x}=T_m^{t x\_ u p}+T_{m n}^{t x_n d i s}(t)+T_{m n}^{t x_n r e}(t)+T_m^{t x\_d o w n}$ | 总传输延迟 |
 |$T_{m n}^{\text {prop\_dis }}(t)=\sum_{e_{x y} \in \text { route }_{0 n}(t)} \frac{l_{e_{x y}}(t)}{C}$|数据卸载阶段的传播延迟|
-|$T_{m n}^{\text {prop\_re }}(t)=\sum_{e_{x y} \in \text { route }_{n 0}(t)} \frac{l_{e_{x y}}(t)}{C}$|结果总结阶段的传播延迟|
+|$T_{m n}^{\text {prop\underline ]]re }}(t)=\sum_{e_{x y} \in \text { route }_{n 0}(t)} \frac{l_{e_{x y}}(t)}{C}$|结果总结阶段的传播延迟|
 |$T_m^{\text {prop\_up }}=T_m^{\text {prop\_down }}=\frac{H}{C}$|结果上传和返回阶段的传播延迟|
-|$T_{m n}^{\text {prop }}(t)=T_m^{\text {prop\_up }}+T_{m n}^{\text {prop\_dis }}(t)+T_{m n}^{\text {prop\_re }}(t)+T_m^{\text {prop\_down }}$|总传播延迟|
+|$$T_{m n}^{\text {prop }}(t)=T_m^{\text {prop\_up }}+T_{m n}^{\text {prop\_dis }}(t)+T_{m n}^{\text {prop\_re }}(t)+T_m^{\text {prop\_down }}$$|总传播延迟|
 |$T_{m n}^{c o m}(t)=T_{m n}^{t x}(t)+T_{m n}^{p r o p}(t)$|总通信延迟|
 |$T_{m n}^{p r o c}(t)=\frac{I_m \times \tau_m}{p_{v_n}(t)}$|计算延迟|
 |$T_{m n}^{tol}(t)=T_{m n}^{c o m}(t)+T_{m n}^{p r o c}(t)$|总延迟|
