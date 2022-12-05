@@ -23,14 +23,14 @@
 |$E$|可以在卫星网络中建立的所有卫星间链路的集合，由星座配置决定|
 |$t$|当前时刻|
 |$R_{I S L}$|受硬件资源约束和能耗约束的卫星间链路的传输速率|
-|$R_E(t)=\left\{r_{e_{i j}}(t) \mid e_{i j} \in E, r_{i j}(t) \in\left\{0, R_{I S L}\right\}\right\}$|$t$ 时刻所有卫星间链路的传输速率的集合（时变，非负）|
-|$L_E(t)=\left\{l_{e_{i j}}(t) \mid e_{i j} \in E, l_{e_{i j}}(t)>0\right\}$|$t$ 时刻卫星节点 $v_i$ 和 $v_j$ 之间的距离|
-|$P_V(t)=\left\{p_{v_i}(t) \mid v_i \in V, p_{v_i}(t) \in\left[0, p_{v_i}^{M A X}\right]\right\}$|$t$ 时刻卫星节点 $v_i$ 的可用计算能力|
-|$P_V^{M A X}=\left\{p_{v_i}^{M A X} \mid v_i \in V\right\}$|集群中每个节点的峰值处理能力|
+|$R_E(t)=\left\lbrace r_{e_{i j}}(t) \mid e_{i j} \in E, r_{i j}(t) \in\left\lbrace 0, R_{I S L}\right\rbrace\right\rbrace$|$t$ 时刻所有卫星间链路的传输速率的集合（时变，非负）|
+|$L_E(t)=\left\lbrace l_{e_{i j}}(t) \mid e_{i j} \in E, l_{e_{i j}}(t)>0\right\rbrace$|$t$ 时刻卫星节点 $v_i$ 和 $v_j$ 之间的距离|
+|$P_V(t)=\left\lbrace p_{v_i}(t) \mid v_i \in V, p_{v_i}(t) \in\left[0, p_{v_i}^{M A X}\right]\right\rbrace$|$t$ 时刻卫星节点 $v_i$ 的可用计算能力|
+|$P_V^{M A X}=\left\lbrace p_{v_i}^{M A X} \mid v_i \in V\right\rbrace$|集群中每个节点的峰值处理能力|
 |$p_{v_i}^{M A X}=M I P S_{v_i} \times cpuclocks$|卫星节点 $v_i$ 可以提供的计算能力的校准值|
 |$R_{gts}$|从地面站到卫星节点的上行链路传输率|
 |$R_{stg}$|从卫星节点到地面站的下行链路传输率|
-|$M=\left\{m_{i} \mid m_i=\right.\left.\left\{I_i, T_i^d, \tau_i, \sigma_i\right\}\right\}$|需要卸载到用户端的卫星边缘计算集群的一组任务，任务集中的任务之间没有约束关系|
+|$M=\left\lbrace m_{i} \mid m_i=\right.\left.\left\lbrace I_i, T_i^d, \tau_i, \sigma_i\right\rbrace\right\rbrace$|需要卸载到用户端的卫星边缘计算集群的一组任务，任务集中的任务之间没有约束关系|
 |$I_i$|任务 $m_i$ 的输入数据量|
 |$T_i^d$|任务 $m_i$ 的截止日期|
 |$\tau_i$|任务 $m_i$ 的计算密度|
@@ -45,10 +45,10 @@
 | $T_{m n}^{t x_n r e}(t)=\frac{h o p_{0 n}(t) \times I_m \times \sigma_m}{r_{e_{0 n}}(t)}$ |结果总结阶段的传输延迟|
 | $T_m^{t x_{-} d o w n}=\frac{I_m \times \sigma_m}{R_{s t g}}$ | 结果返回阶段的传输延迟 |
 | $T_{m n}^{t x}=T_m^{t x_{-} u p}+T_{m n}^{t x_n d i s}(t)+T_{m n}^{t x_n r e}(t)+T_m^{t x_{-} d o w n}$ | 总传输延迟 |
-|$T_{m n}^{\text {prop\_dis }}(t)=\sum_{e_{x y} \in \text { route }_{0 n}(t)} \frac{l_{e_{x y}}(t)}{C}$|数据卸载阶段的传播延迟|
-|$T_{m n}^{\text {prop\_re }}(t)=\sum_{e_{x y} \in \text { route }_{n 0}(t)} \frac{l_{e_{x y}}(t)}{C}$|结果总结阶段的传播延迟|
-|$T_m^{\text {prop\_up }}=T_m^{\text {prop\_down }}=\frac{H}{C}$|结果上传和返回阶段的传播延迟|
-|$T_{m n}^{\text {prop }}(t)=T_m^{\text {prop\_up }}+T_{m n}^{\text {prop\_dis }}(t)+T_{m n}^{\text {prop\_re }}(t)+T_m^{\text {prop\_down }}$|总传播延迟|
+|$T_{m n}^{{prop_{-}dis }}(t)=\sum_{e_{x y} \in \text { route }_{0 n}(t)} \frac{l_{e_{x y}}(t)}{C}$|数据卸载阶段的传播延迟|
+|$T_{m n}^{{prop_{-}re }}(t)=\sum_{e_{x y} \in \text { route }_{n 0}(t)} \frac{l_{e_{x y}}(t)}{C}$|结果总结阶段的传播延迟|
+|$T_m^{{prop_{-}up }}=T_m^{{prop_{-}down }}=\frac{H}{C}$|结果上传和返回阶段的传播延迟|
+|$T_{m n}^{{prop }}(t)=T_m^{{prop_{-}up }}+T_{m n}^{{prop_{-}dis }}(t)+T_{m n}^{{prop_{-}re }}(t)+T_m^{{prop_{-}down }}$|总传播延迟|
 |$T_{m n}^{c o m}(t)=T_{m n}^{t x}(t)+T_{m n}^{p r o p}(t)$|总通信延迟|
 |$T_{m n}^{p r o c}(t)=\frac{I_m \times \tau_m}{p_{v_n}(t)}$|计算延迟|
 |$T_{m n}^{tol}(t)=T_{m n}^{c o m}(t)+T_{m n}^{p r o c}(t)$|总延迟|
