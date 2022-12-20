@@ -4,6 +4,10 @@
 
 + [Orbital Edge Computing: Nanosatellite Constellations as a New Class of Computer System](OEC/README.md)
 
+### 遗传算法
+
++ [Genetic algorithms for task scheduling problem](GA.md)
+
 ### 云环境下的调度 | 边缘计算
 + [An immune system-inspired rescheduling algorithm for workflow in Cloud systems](./immune.md)
 
